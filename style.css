@@ -5,6 +5,7 @@ font-size:100%;
 margin:0;
 padding:0;
 vertical-align:baseline;
+font-family: 'MyWebFont', Fallback, sans-serif;
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
