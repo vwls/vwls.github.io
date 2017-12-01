@@ -218,6 +218,10 @@ section:last-child {
 	color: #131FFF;
 }
 
+.noLink {
+	text-decoration: none;
+}
+
 .sectionContent h2 {
 	font-family: Akkurat-mono, Helvetica, Arial, sans-serif;
 	/*font-size: 1.25em;*/
