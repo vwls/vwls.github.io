@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="theDocument">
 	<head>
 	<title>Fletcher Bach - CV</title>
 
@@ -14,6 +14,39 @@
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+
+	<script>
+		function darkToggle() {
+		    var checkBox = document.getElementById("dmToggle");
+		    var theDocument = document.getElementById("theDocument");
+		    let toggleText = document.getElementById("toggleText");
+
+			  if (checkBox.checked == true){
+			    // add class "darkMode" to html
+			    addClass(theDocument, 'darkMode');
+			    toggleText.innerHTML="Light Mode";
+			  } else {
+			    // add class "darkMode" to html 
+			    removeClass(theDocument, 'darkMode');
+			    toggleText.innerHTML="Dark Mode";
+			  }
+		}
+
+		function hasClass(ele,cls) {
+			  return !!ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+			}
+
+			function addClass(ele,cls) {
+			  if (!hasClass(ele,cls)) ele.className += ""+cls;
+			}
+
+			function removeClass(ele,cls) {
+			  if (hasClass(ele,cls)) {
+			    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+			    ele.className=ele.className.replace(reg,'');
+			  }
+		}
+	</script>
 	</head>
 	<body id="top">
 		<div id="cv" class="instaFade">
@@ -33,6 +66,15 @@
 						<li>e: <a href="mailto:fhbach@gmail.com" target="_blank">fhbach@gmail.com</a></li>
 						<li>p: 802.338.2524</li>
 					</ul>
+
+					<div class="dmContainer">
+						<span id="toggleText">Dark Mode</span>
+						<label class="switch">
+		  					<input id="dmToggle" type="checkbox" onclick="darkToggle()">
+		  						<span class="slider round"></span>
+						</label>
+					</div>
+
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -120,7 +162,7 @@
 						<article>
 							<h2>Wiring, Soldering, and Installation | Artists <a class="noLink" href="http://taeyoonchoi.com/">Taeyoon Choi</a> + <a class="noLink" href="http://christinesunkim.com/">Christine Sun Kim</a></h2>
 							<p class="subDetails">November 2016</p>
-							<p>Wiring, soldering, construction, and installation for Walking Chimes, a piece by <a href="http://taeyoonchoi.com/">Taeyoon Choi</a> and <a href="http://christinesunkim.com/">Christine Sun Kim</a> that was exhibited at The Smithsonian's <a href="http://smithsonianapa.org/alt/">Ctrl+Alt: A Culture Lab On Imagined Futures</a>.</p>
+							<p>Wiring, soldering, construction, and installation for Walking Chimes, a piece by <a class="noLink" href="http://taeyoonchoi.com/">Taeyoon Choi</a> and <a class="noLink" href="http://christinesunkim.com/">Christine Sun Kim</a> that was exhibited at The Smithsonian's <a class="noLink" href="http://smithsonianapa.org/alt/">Ctrl+Alt: A Culture Lab On Imagined Futures</a>.</p>
 						</article>
 
 						<article>
@@ -242,8 +284,7 @@
 					</div>
 					<div class="clear"></div>
 				</section>
-				
-				
+
 				<script>
 					console.log("░░▒▓░   ░▒▓░░      ░▒▓░");
 					console.log("░░▒▓░   ░▒▓░░          ");
